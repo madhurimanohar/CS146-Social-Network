@@ -1,22 +1,19 @@
-package GUI;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 
-class UserNotFound extends Exception{
-    public UserNotFound(String error){
-        super(error);
-    }
-}
-
+/**
+ * 
+ * @author madhurim, Eunice Oh
+ *
+ * @param <Profile>
+ */
 public class Graph<Profile> {
 
     private ArrayList<Profile> adjacencyList;
     private int profiles;
 
     //constructor
-    public Graph()
-    {
+    public Graph() {
         adjacencyList = new ArrayList<Profile>();
     }
 
@@ -43,23 +40,10 @@ public class Graph<Profile> {
             adjacencyList.remove(p);
         }
     }
+}
 
-
-
-/*
-    public void addEdge(Profile user, Profile friend){
-        // add p2 to linkedlist of p1
-        // add p1 to linkedlist of p2
-        int userIndex = adjacencyList.indexOf(user);
-
-
-
+class UserNotFound extends Exception{
+    public UserNotFound(String error){
+        super(error);
     }
-*/
-    //removeVertex
-
-    //createFriendship aka add edge
-
-
-    //unfriend aka remove edge
 }

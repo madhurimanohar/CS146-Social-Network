@@ -1,30 +1,21 @@
-package GUI;
-
-//import GraphPackage.*;
-//import ADTPackage.*;
-
 /**
- An implementation of a profile manager on a simple
- social network.
- @author Jesse Grabowski
- @author Joseph Erickson
- @version 5.0 */
-
-public class ProfileManager
-{
+ *  An implementation of a profile manager on a simple 
+ *  social network.
+ * @author madhurim, Eunice Oh
+ *
+ */
+public class ProfileManager {
     private Graph<Profile> allProfiles;
 
     /** Constructor for an instance of a profile manager. */
-    public ProfileManager()
-    {
+    public ProfileManager() {
         allProfiles = new Graph<Profile>();
     }
 
     /** Adds a profile to the social network.
      @param p  The profile to be added to the
      network. */
-    public void addProfile(Profile p)
-    {
+    public void addProfile(Profile p) {
         allProfiles.addVertex(p);
 
     }
@@ -32,8 +23,7 @@ public class ProfileManager
     /** Removes a profile from the social network.
      @param p  The profile to be removed from the
      network. */
-    public void removeProfile(Profile p)
-    {
+    public void removeProfile(Profile p) {
         allProfiles.removeVertex(p);
     }
 
@@ -41,20 +31,15 @@ public class ProfileManager
      @param a  The first profile in the friendship.
      @param b  The second profile in the friendship.
      */
-    public void createFriendship(Profile a, Profile b)
-    {
+    public void createFriendship(Profile a, Profile b) {
         if(!a.getFriends().contains(b) || !b.getFriends().contains(a)){
             a.getFriends().add(b);
             b.getFriends().add(a);
-//            a.addFriend(b);
-//            b.addFriend(a);
-
         }
-    } // end createFriendship
+    }
 
     /** Displays each profile's information and friends. */
-    public void display()
-    {
+    public void display() {
         Profile startPoint = allProfiles.getVertex(0);
         startPoint.display();
         for(int i = 1; i < allProfiles.getNumOfProfiles(); i++){
@@ -62,8 +47,7 @@ public class ProfileManager
             startPoint = allProfiles.getVertex(i);
             startPoint.display();
         }
-
-    } //end display
+    }
 
     public Profile findProfile(String name){
         for(int i = 0; i < allProfiles.getNumOfProfiles(); i++){
@@ -74,5 +58,4 @@ public class ProfileManager
         }
         return null;
     }
-
-} // end ProfileManager
+}

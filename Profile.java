@@ -1,39 +1,23 @@
-package GUI;
-
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-// Users can join, leave, create/modify/search profiles, add friends
-
+/**
+ * Users can join, leave, create/modify/search profiles, add friends
+ * @author madhurim, Eunice Oh
+ *
+ */
 public class Profile {
-
-  //  private BufferedImage picture;
     private String firstName;
     private String lastName;
     private String status;
     private ArrayList<Profile> friendProfiles; //linked list portion
 
     public Profile(String first, String last, String status) {
-     //   picture = new BufferedImage(100, 100, BufferedImage.TYPE_3BYTE_BGR);    // I'm not sure what to add here, can change
         firstName = first;
         lastName = last;
         this.status = status;
         friendProfiles = new ArrayList<>();
     }
-
-    /** Returns the picture associated with the profile.
-     @return The profile's picture. */
-//    public BufferedImage getProfilePicture() {
-//        return picture;
-//
-//    }
-
-    /**Sets the picture associated with the profile to the given picture.
-     @param newPicture The new picture associated with the profile. */
-//    public void setProfilePicture(BufferedImage newPicture) {
-//        newPicture = picture;
-//
-//    }
 
     /*** Sets the name associated with the profile to the given name.
      * @param firstName The first name for the profile.
@@ -88,21 +72,15 @@ public class Profile {
 
     public String toString() {
         return "Name: " + getFirstName() +  " " + getLastName() + " \n" + "Status: " + getStatus();
-        //+ " Profile Picture: " + getProfilePicture();
-
     }
 
     /** Displays the profile's information and friendProfiles. */
     public void display() {
-
         System.out.println(toString());
-
         System.out.println("My Friends: ");
         for(int i = 0; i < friendProfiles.size(); i++){
             System.out.println("------------------------------");
             System.out.println(friendProfiles.get(i).toString());
         }
     }
-
 }
-
